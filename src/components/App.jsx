@@ -33,6 +33,7 @@ export class App extends Component {
 
   render() {
     const {good,neutral,bad} = this.state;
+    let total = this.countTotalFeedback()
     return(
     <div style={{
       width: '320px',
@@ -47,7 +48,7 @@ export class App extends Component {
         
         
       
-      {!good && !neutral && !bad
+      {!total
       ?
       <Notification message="There is no feedback"/>
       :
